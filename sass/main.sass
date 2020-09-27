@@ -1,0 +1,800 @@
+@import config
+
+/* IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    header
+        .header-container
+            .container
+                .hero
+                    .img
+                        img
+                            max-width: 100% !important
+                            height: auto  !important      
+                            width: auto !important  
+
+    .features
+        #tabs
+            .ui-tabs-panel
+                .img
+                    img
+                        max-width: 100% !important
+                        height: auto  !important      
+                        width: auto !important                           
+
+
+//Arrow
+.top 
+	color: #fff
+	position: fixed
+	bottom: -100px
+	right: -100px
+	width: 50px
+	height: 50px
+	background-color: $accent
+	z-index: 99
+	border-radius: 10em
+	line-height: 50px
+	text-align: center
+	font-size: 25px
+	opacity: 0.4
+	transition: all .25s ease
+	cursor: pointer
+	&.active 
+		bottom: 25px
+		right: 25px
+	&:hover 
+		background-color: $nvdblue
+		opacity: 1
+		color: #fff    
+
+
+//Animation
+.animate__animated.animate__bounce 
+    --animate-duration: 0.5s
+
+
+//Loader
+.loader
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../images/dest/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-posirion: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+
+// Header
+header
+    .header-container
+        .container
+            position: relative
+            .nav-top
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding-top: 25px
+                .container-menu
+                    .header-menu
+                        list-style-type: none
+                        letter-spacing: 1px
+                        display: flex
+                        flex-wrap: nowrap
+                        margin-bottom: 0
+                        li
+                            padding-right: 15px
+                            padding-left: 15px                            
+                            text-transform: uppercase
+                            font-weight: 400
+                            a         
+                                display: block
+                                padding: 5px 10px
+                                color: #000
+                                transition: color .25s ease                       
+                                &:hover
+                                    text-decoration: none
+                                    color: $red
+                            button
+                                letter-spacing: 1px
+                                box-shadow: 0 4px 12px rgba(0,0,0,.2)
+                                background: $red
+                                text-align: center
+                                border: 3px solid $red
+                                border-radius: 8px
+                                color: #fff
+                                padding: 2px 32px
+                                transition: all .25s ease  
+                                &:hover
+                                    background: #fff
+                                    color: $red
+    .hero
+        padding-top: 130px
+        padding-bottom: 50px
+        .row
+            align-items: center
+        .text
+            h1
+                line-height: 40px
+                span
+                    display: block
+            p
+                padding-top: 15px
+                color: $nblue
+                width: 90%
+            .button-container
+                padding-top: 30px
+                .button
+                    padding: 14px 18px
+                    text-align: center
+                    border-radius: 6px
+                    transition: all .25s ease
+                    &-blue                    
+                        color: #fff
+                        background-color: $accent
+                        border: 3px solid $accent                   
+                        &:hover
+                            background-color: #fff
+                            color: $accent
+                    &-white
+                        color: #000
+                        background-color: #fff
+                        border: 3px solid #fff
+                        box-shadow: 0 4px 12px rgba(0,0,0,.2)
+                        margin-left: 15px
+                        &:hover
+                            border: 3px solid #000
+                    &:hover
+                        text-decoration: none
+
+        .img
+            img
+                width: 100%
+                height: 100%
+            &::before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 76%
+                border-radius: 35% 0 0 35%
+                right: -30%
+                top: 30%
+                background-color: $accent
+                z-index: -1
+
+
+//Button           
+.toggle_mnu
+    display: none
+    width: 60px
+    height: 60px
+    position: absolute
+    z-index: 200
+    border: none
+    right: 20px
+    top: 0px
+    background: none
+    span
+        display: block
+.sandwich 
+    width: 28px
+    height: 28px
+    position: absolute
+    top: 28px
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+.sw-topper
+    position: relative
+    top: 0
+    width: 28px
+    height: 3px
+    background: rgb(0, 0, 0)
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: transform 0.5s, top 0.2s
+    transition-delay: 0.2s, 0s
+.sw-bottom
+    position: relative
+    width: 28px
+    height: 3px
+    top: 6.6px
+    background: rgb(0, 0, 0)
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: transform 0.5s, top 0.2s
+    transition-delay: 0.2s, 0s
+.sw-footer
+    position: relative
+    width: 28px
+    height: 3px
+    top: 13.5px
+    background: rgb(0, 0, 0)
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: all 0.5s
+    transition-delay: 0.1s
+
+
+.sandwich.active .sw-topper 
+    background: rgb(255, 255, 255)
+    top: 9px
+    -webkit-transform: rotate(-45deg)
+    -ms-transform: rotate(-45deg)
+    transform: rotate(-45deg) 
+.sandwich.active .sw-bottom 
+    background: rgb(255, 255, 255)
+    top: 6px
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg) 
+.sandwich.active .sw-footer 
+    opacity: 0
+    top: 0
+    -webkit-transform: rotate(180deg)
+    -ms-transform: rotate(180deg)
+    transform: rotate(180deg)
+
+.top_mnu
+    position: fixed
+    height: 100%
+    width: 100%
+    background-color: rgba(36,43,70,.9)
+    z-index: 50
+    right: 0
+    top: 0
+    display: none
+
+//Features
+.features
+    padding: 140px 0px
+    .section-header
+        text-align: center
+        margin: 0 auto
+        width: 540px
+        p
+            padding: 15px 0 20px 0
+            color: $nblue
+    #tabs
+        ul
+            list-style: none
+            display: flex
+            justify-content: center
+            padding-left: 0
+            li
+                padding: 15px 45px
+                position: relative
+                white-space: nowrap
+                &::after
+                    content: ""
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    background-color: $nblue
+                    height: 1px
+                    transition: all .25s ease
+                a
+                    color: $nblue
+                    transition: color .25s ease
+                    &:hover
+                        text-decoration: none
+                        color: $red
+            .ui-state-active
+                &::after
+                    height: 3px
+                    background-color: #f95656
+                a
+                    color: #000
+        .ui-tabs-panel
+            transition: all .25s ease
+            padding-top: 50px
+            .img
+                padding-right: 50px
+                img
+                    width: 100%
+                    height: 100%
+                &::before
+                    content: ""
+                    position: absolute
+                    left: -30%
+                    top: 30%
+                    width: 100%
+                    height: 76%
+                    border-radius: 0 35% 35% 0
+                    background-color: $accent
+                    z-index: -1
+            .text
+                padding-top: 50px
+                padding-left: 50px
+                p
+                    color: $nblue
+                    width: 450px 
+                    padding-bottom: 20px
+                a
+                    padding: 11px 20px
+                    border: 3px solid $accent
+                    color: #fff
+                    background-color: $accent
+                    transition: all .25s ease
+                    border-radius: 6px
+                    &:hover
+                        text-decoration: none 
+                        background-color: #fff
+                        color: $accent
+        #tabs-1
+            .img
+                img
+                &::before
+                    top: 22%
+                    height: 93%
+
+//Extenstion
+.extension
+    padding: 20px 0px
+    padding-bottom: 100px
+    .extension-header
+        padding-top: 30px
+        padding-bottom: 80px
+        text-align: center
+        width: 540px
+        margin: 0 auto
+        h2+p
+            padding: 15px 0 20px 0
+            color: $nblue
+    .cards
+        .ext-card
+            position: relative
+            padding: 55px 0 30px 0
+            margin: 0 20px
+            border-radius: 10px
+            text-align: center
+            box-shadow: 0 10px 20px rgba(36,43,70,.1)
+            transition: all .25s ease
+            .img
+                padding: 15px 0 
+            .text
+                padding-top: 10px
+                h3+p
+                    color: $nblue
+                    font-size: 15px
+            .dots
+                width: 100%
+            button
+                margin-top: 25px
+                padding: 11px 20px
+                border: 3px solid $accent
+                color: #fff
+                background-color: $accent
+                transition: all .25s ease
+                border-radius: 6px
+                &:hover
+                    text-decoration: none 
+                    background-color: #fff
+                    color: $accent 
+            &:hover
+                transform: scale(1.05)
+        .col-md-4
+            &:nth-child(2)             
+                top: 35px
+            &:last-child
+                top: 70px
+
+
+//Questions
+.questions
+    padding: 50px 0
+    padding-bottom: 140px
+    &-header
+        padding-top: 75px
+        text-align: center
+        padding-bottom: 40px
+        text-align: center
+        width: 540px
+        margin: 0 auto
+        h2+p
+            padding: 15px 0 20px 0
+            color: $nblue
+    .container
+        .section-accordion
+            width: 540px
+            margin: 0 auto
+            border-bottom: 1px solid $nblue
+            h3
+                font-weight: 400
+                padding: 18px 0 10px 0 
+                border-top: 1px solid $nblue
+                transition: color .25s ease
+                &:hover
+                    cursor: pointer
+                    color: $red
+                .fa-angle-down
+                    margin-top: 8px
+                    color: $accent
+                    float: right
+                    margin-right: 15px
+                    transition: all .25s ease
+            p
+                color: $nblue
+            .ui-accordion-header-active
+                .fa-angle-down
+                    color: $red
+                    transform: rotate(180deg)
+        .button-container
+            margin-top: 40px
+            display: flex
+            justify-content: center
+            .button
+                text-align: center
+                display: inline-block
+                padding: 11px 20px
+                border: 3px solid $accent
+                color: #fff
+                background-color: $accent
+                transition: all .25s ease
+                border-radius: 6px
+                &:hover
+                    text-decoration: none 
+                    background-color: #fff
+                    color: $accent        
+
+//Contact
+.contact
+    padding: 50px 0
+    background-color: $accent
+    color: #fff
+    ::selection
+        background-color: $red
+        color: #fff   
+    .contact-header
+        text-align: center
+        & > span
+            font-size: 16px
+            text-transform: uppercase
+            letter-spacing: 3px           
+        h2
+            padding-top: 25px
+            line-height: 38px
+            span
+                display: block
+    form
+        width: 540px
+        margin: 0 auto
+        margin-top: 30px
+        button
+            border: 3px solid $red !important
+            height: 48px
+            background-color: $red
+            font-size: 18px
+            &:hover
+                background-color: #fff
+                color: $red
+    .field-container
+        position: relative
+        input
+            padding-right: 35px
+            transition: all .25s ease
+        input.error
+            border: 3px solid $red
+        input.valid
+            border: 3px solid green
+        label.error
+            padding-left: 10px
+            bottom: -34px
+            position: absolute
+            background: $red
+            width: 100%
+            border: 2px solid $red
+            border-bottom-left-radius: 5px
+            border-bottom-right-radius: 5px
+            font-size: 16px
+            font-style: italic
+            font-weight: 500
+            &::before           
+                content: url(../images/dest/icon-error.svg)
+                display: block
+                position: absolute
+                right: 15px
+                top: -32px
+
+footer
+    padding: 35px 0
+    background-color: $nvdblue
+    text-transform: uppercase
+    letter-spacing: 1px
+    ul
+        list-style-type: none
+        padding-left: 0
+        margin-bottom: 0
+    .ul-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        ul
+            display: flex
+            li
+                margin-left: 25px
+                a
+                    color: #ffffff
+                    transition: color .25s ease
+                    &:hover
+                        text-decoration: none
+                        color: $red
+
+
+//Media  
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) 
+    header
+        .header-container
+            overflow: hidden
+            .container
+                .nav-top
+                    .container-menu
+                        .header-menu
+                            li
+                                padding-right: 9px
+                                padding-left: 9px   
+        .hero
+            .text
+                .button-container
+                    .button
+                        font-size: 16px
+                        padding: 12px 8px
+
+            .img
+                position: relative
+                width: 100%
+                img
+                &::before
+                    top: 18%
+                    height: 88%
+
+    .features
+        #tabs
+            .ui-tabs-panel
+                .text
+                    p
+                        width: 100%
+
+    .extension
+        .extension-header
+            width: 100%
+        .cards 
+            .ext-card 
+                margin: 0
+                button
+                    font-size: 14px
+                    padding: 11px 4px
+
+    
+
+   
+
+@media only screen and (max-width : 767px)   
+    header
+        .header-container
+            .container         
+                .nav-top
+                    .container-menu   
+                        .header-menu
+                            display: none     
+
+        .hero
+            padding-top: 80px
+            .text
+                .button-container
+                    .button
+                        font-size: 13px
+                        padding: 10px 6px            
+            .text
+                padding-top: 65px
+                text-align: center
+                p
+                    margin: 0 auto
+                    font-size: 16px
+                .button-container
+                    padding-top: 30px
+                    display: flex
+                    margin: 0 auto
+                    justify-content: center
+                    .button
+                        padding: 16px 14px    
+                                      
+    .toggle_mnu
+        display: inherit
+    .top_mnu
+        .menu           
+            list-style-type: none
+            text-align: center
+            margin-top: 100px
+            padding-left: 0
+            text-transform: uppercase
+            letter-spacing: 2px
+            li
+                padding: 15px 0
+                border-top: 1px solid #fff
+                width: 80%
+                margin: 0 auto                
+                a
+                    color: #fff
+                    display: block
+                    width: 90%
+                    margin: 0 auto
+                    transition: color .25s ease
+                    &:hover
+                        text-decoration: none
+                        color: $red
+                button
+                    padding: 4px 0
+                    background: none
+                    color: #ffffff
+                    border: 2px solid #fff
+                    width: 100%
+                    border-radius: 5px
+                    transition: all .25s ease
+                    letter-spacing: 2px
+                    &:hover
+                        color: #000
+                        background: #fff
+        .social
+            margin-top: 90px
+            display: flex
+            justify-content: center
+            padding-left: 0
+            li
+                list-style: none
+                padding: 0 15px
+                a
+                    color: #fff
+                    transition: color .25s ease
+                    &:hover
+                        text-decoration: none
+                        color: $red
+
+    .features
+        padding: 75px 40px
+        .section-header
+            width: 100%
+            p
+                font-size: 16px
+        #tabs
+            ul
+                flex-direction: column
+                text-align: center
+                li
+                    border-top: 1px solid $nblue
+                    &::after
+                        content: none
+                    &:last-child                        
+                        border-bottom: 1px solid $nblue
+            .ui-state-active
+                    &::after
+                        content: ""
+                        position: absolute
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        background-color: $red
+                        height: 1px
+                        transition: all .25s ease
+                        width: 45%
+                        margin: 0 auto
+            .ui-tabs-panel
+                .text
+                    padding-left: 0
+                    padding-top: 70px
+                    text-align: center
+                    p
+                        padding: 0 20px
+                        width: 100%
+                        font-size: 16px
+                    a
+                        display: none
+
+    .extension 
+        .extension-header
+            padding-top: 45px
+            h2+p
+                font-size: 16px
+                padding: 0 20px
+                width: 100%
+        .cards 
+            .ext-card
+                margin: 0 30px
+                button
+                    padding: 13px 30px
+
+    .questions
+        padding-bottom: 95px
+        &-header
+            width: 100%
+            padding: 0 25px
+            h2+p
+                padding: 0 20px
+                width: 100%
+                font-size: 16px
+        .container
+            .section-accordion
+                margin: 0 auto
+                width: 90%               
+                h3
+                    position: relative
+                    padding-right: 30px
+                    font-size: 16px
+                    .fa-angle-down
+                        position: absolute
+                        right: -2px
+                        top: 40%
+
+    .contact
+        h2
+            font-size: 24px
+        form
+            margin-top: 35px
+            width: 100%
+            padding: 0 28px
+        .field-container
+            position: relative
+            input
+                padding-right: 35px
+                transition: all .25s ease
+            input.error
+                border: 3px solid $red
+                margin-bottom: 35px
+
+    footer
+        padding: 35px 0
+        background-color: $nvdblue
+        ul
+            list-style-type: none
+            padding-left: 0
+            margin-bottom: 0
+        .ul-container
+            display: flex
+            flex-direction: column
+            ul
+                li
+                    margin-left: 0
+            .list
+                text-align: center
+                font-size: 16px
+                ul
+                    display: flex
+                    flex-direction: column
+                    li
+                        margin-top: 25px
+            .media
+                margin-top: 25px
+                ul
+                    justify-content: center
+                    flex-direction: row
+                    li
+                        padding-left: 20px
+                        &:first-child
+                            padding-left: 0
+                        a
+                            color: #ffffff
+                            transition: color .25s ease
+                            &:hover
+                                text-decoration: none
+                                color: $red
+
+
+                        
+	
